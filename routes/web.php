@@ -39,6 +39,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Front'],function(){
     Route::get('/all-cart','CartController@AllCart')->name('all.cart');
     Route::get('/my-cart','CartController@MyCart')->name('cart');
     Route::get('/empty-cart','CartController@EmptyCart')->name('cart.empty');
+    Route::get('/checkout','CheckoutController@Checkout')->name('checkout');
+    Route::post('/apply/coupon','CheckoutController@ApplyCoupon')->name('apply.coupon');
+    Route::get('/remove/coupon','CheckoutController@RemoveCoupon')->name('coupon.remove');
+    Route::post('/order/place','CheckoutController@OrderPlace')->name('order.place');
 
 
     Route::get('/cartproduct/remove/{rowId}','CartController@RemoveProduct');
